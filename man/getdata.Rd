@@ -4,9 +4,7 @@
 \alias{getdata}
 \title{Gets relevant data from Google Sheets.}
 \usage{
-getdata(
-  auth_method = gs4_auth(scopes = "https://www.googleapis.com/auth/spreadsheets")
-)
+getdata()
 }
 \value{
 an uncleaned \code{data.frame}

@@ -2,7 +2,7 @@
 #' Gets relevant data from Google Sheets.
 #'
 #' @return an uncleaned `data.frame`
-#' @import googlesheets4
+#' @import gsheet
 #' @import tidyr
 #' @import dplyr
 #' @export
@@ -10,7 +10,7 @@
 #'
 #' @examples
 #' getdata()
-getdata <- function(auth_method = gs4_auth(scopes = "https://www.googleapis.com/auth/spreadsheets")) {
+getdata <- function() {
   # Set filename and URLs
   google_sheet_url_1 <-
     "https://docs.google.com/spreadsheets/d/1KrPJe9OOGuix2EAvcTfuspAe3kqN-y20Huyf5ImBEl4/edit#gid=804798874"
@@ -25,19 +25,18 @@ getdata <- function(auth_method = gs4_auth(scopes = "https://www.googleapis.com/
   # Check if the file is/has been written.
   # If not, read it in from google sheets, save as `soil_data`
   if (!(file.exists(soil_file))) {
-    # Run Google Authentication
-    auth_method
+    # Google Authentication not needed because "anyone can view"
     # Do the data wrangling
     soil_data <-
       inner_join(
-        read_sheet(google_sheet_url_1),
-        read_sheet(google_sheet_url_2),
+        gsheet2tbl(google_sheet_url_1),
+        gsheet2tbl(google_sheet_url_2),
         by = c(`What is your site name?` = 'site_name'),
         keep = TRUE
       ) %>%
-      inner_join(read_sheet(google_sheet_url_3), by = "full_name") %>%
+      inner_join(gsheet2tbl(google_sheet_url_3), by = "full_name") %>%
       inner_join(
-        read_sheet(google_sheet_url_4, col_types = "ccccnnnnnnnnnnnnnnnnnnnnnnn"),
+        gsheet2tbl(google_sheet_url_4),
         by = c("full_name", "site_id")
       ) %>% # Special characters
       rename("type" = `Which best describes your site?`) %>%
