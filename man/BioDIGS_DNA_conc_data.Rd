@@ -4,7 +4,10 @@
 \alias{BioDIGS_DNA_conc_data}
 \title{Produce DNA concentration data in a clean format for use in R.}
 \usage{
-BioDIGS_DNA_conc_data()
+BioDIGS_DNA_conc_data(info = TRUE)
+}
+\arguments{
+\item{info}{if set to TRUE, print important information to the console. This can be disabled with \code{info = FALSE}.}
 }
 \value{
 a \code{data.frame}

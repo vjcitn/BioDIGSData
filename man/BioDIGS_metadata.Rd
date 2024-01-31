@@ -4,7 +4,10 @@
 \alias{BioDIGS_metadata}
 \title{Produce data in a nice clean format for use in R.}
 \usage{
-BioDIGS_metadata()
+BioDIGS_metadata(info = TRUE)
+}
+\arguments{
+\item{info}{if set to TRUE, print important information to the console. This can be disabled with \code{info = FALSE}.}
 }
 \value{
 a \code{data.frame}
