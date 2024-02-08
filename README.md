@@ -1,4 +1,4 @@
-# BioDIGSData
+# BioDIGSData <img src="man/figures/logo.png" align="right" height="138" />
 
 Data Package for BioDIGS Project
 
