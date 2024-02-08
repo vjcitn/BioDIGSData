@@ -10,7 +10,7 @@ Install the package by running the following in R. You might need to install the
 devtools::install_github("fhdsl/BioDIGSData")
 ```
 
-## Using the Package
+## Usage
 
 Bring in the data using predefined functions. For example:
 
