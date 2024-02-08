@@ -1,4 +1,4 @@
-# BioDIGSData <img src="man/figures/logo.png" align="right" height="138" />
+# BioDIGSData <img src="man/hex_logo.png" align="right" height="138" />
 
 We've created a data package to help you easily bring BioDIGS soil data and metadata into R! This package is currently in development, so if there's a feature you'd like to see, please let us know!
 
