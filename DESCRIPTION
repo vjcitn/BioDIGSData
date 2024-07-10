@@ -16,4 +16,5 @@ Imports:
     gsheet,
     lubridate,
     stringr,
-    tidyr
+    tidyr,
+    tidyverse
