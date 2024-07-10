@@ -31,7 +31,7 @@ getdata <- function() {
       inner_join(
         gsheet2tbl(google_sheet_url_1),
         gsheet2tbl(google_sheet_url_2),
-        by = c(`What is your site name?` = 'site_name'),
+        by = c(`What.is.your.site.name.` = 'site_name'),
         keep = TRUE
       ) %>%
       inner_join(gsheet2tbl(google_sheet_url_3), by = "full_name") %>%
@@ -39,7 +39,7 @@ getdata <- function() {
         gsheet2tbl(google_sheet_url_4),
         by = c("full_name", "site_id")
       ) %>% # Special characters
-      rename("type" = `Which best describes your site?`) %>%
+      rename("type" = `Which.best.describes.your.site.`) %>%
       separate("type", into = c("type", "type2"), sep = ":")
     write.csv(soil_data, soil_file)
   } else {
@@ -230,3 +230,4 @@ BioDIGS_soil_data <- function(info = TRUE) {
 
   return(testing_data_)
 }
+
